@@ -3,6 +3,7 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import CompanyTableRow from './CompanyTableRow';
 import CheckLIst from "../list/CheckList";
+import {url } from '../../config/config';
 
 export default class CompanyList extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class CompanyList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/companys/')
+    axios.get(`${url}/companys/`)
       .then(res => {
           console.log('=====company data====',res.data)
         this.setState({

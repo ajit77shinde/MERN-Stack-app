@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import {url } from '../config/config';
 
 export default class EditStudent extends Component {
 
@@ -22,7 +23,7 @@ export default class EditStudent extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/students/edit-student/' + this.props.match.params.id)
+    axios.get(`${url}/students/edit-student/${this.props.match.params.id}` )
       .then(res => {
         this.setState({
           name: res.data.name,

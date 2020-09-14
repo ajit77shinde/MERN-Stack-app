@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import Button from 'react-bootstrap/Button';
+// import { Link } from 'react-router-dom';
+// import axios from 'axios';
+// import Button from 'react-bootstrap/Button';
+// import {url } from '../../config/config';
 
 export default class CompanyTableRow extends Component {
 
     constructor(props) {
         super(props);
-        this.deleteStudent = this.deleteStudent.bind(this);
+        // this.deleteStudent = this.deleteStudent.bind(this);
     }
 
-    deleteStudent() {
-        axios.delete('http://localhost:4000/students/delete-student/' + this.props.obj._id)
-            .then((res) => {
-                console.log('Student successfully deleted!')
-            }).catch((error) => {
-                console.log(error)
-            })
-    }
+    // deleteStudent() {
+    //     axios.delete(`${url}/students/delete-student/${this.props.obj._id}`)
+    //         .then((res) => {
+    //             console.log('Student successfully deleted!')
+    //         }).catch((error) => {
+    //             console.log(error)
+    //         })
+    // }
 
     render() {
         return (

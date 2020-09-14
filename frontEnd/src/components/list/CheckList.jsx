@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import  CheckBox  from './CheckBox';
 import axios from 'axios';
+import {url } from '../../config/config';
+
 class CheckList extends Component {
     constructor(props) {
         super(props)
@@ -18,7 +20,7 @@ class CheckList extends Component {
       componentDidMount() {
         let industryList =[]
             
-        axios.get('http://localhost:4000/companys/unique-in-industry')
+        axios.get(`${url}/companys/unique-in-industry`)
           .then(res => {
             //   console.log('=====industryList data====',res.data)
               if(res.data)
@@ -56,7 +58,7 @@ class CheckList extends Component {
         const filtered = industryList.reduce((a, o) => (o.isChecked && a.push(o.value), a), [])      
         console.log('filter result = ', filtered)
 
-        axios.post('http://localhost:4000/companys/filtering',filtered )
+        axios.post(`${url}/companys/filtering`,filtered )
         .then(res => {
             console.log('=====industryList data====',res.data)
         //   this.setState({
