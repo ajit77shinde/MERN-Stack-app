@@ -14,6 +14,7 @@ import EditStudent from "./components/edit-student.component";
 import StudentList from "./components/student-list.component";
 import CompanyList from "./components/company/company-list.component";
 import ContactList from "./components/contact/contact-list.component";
+import { CreateUser } from "./components/user/create-user";
 
 function App() {
   return (<Router>
@@ -30,7 +31,7 @@ function App() {
 
             <Nav className="justify-content-end">
            
-              <Nav>
+              {/* <Nav>
                 <Link to={"/company-list"} className="nav-link">
                   Company List
                 </Link>
@@ -40,7 +41,7 @@ function App() {
                   Contact List
                 </Link>
               </Nav>
-              {/* <Nav>
+              <Nav>
                 <Link to={"/create-student"} className="nav-link">
                   Create Student
                 </Link>
@@ -57,6 +58,16 @@ function App() {
                   Student List
                 </Link>
               </Nav> */}
+              <Nav>
+                <Link to={"/create-User"} className="nav-link">
+                  Create User
+                </Link>
+              </Nav>
+              <Nav>
+                <Link to={"/user-list"} className="nav-link">
+                  User List
+                </Link>
+              </Nav>
                 
             </Nav>
 
@@ -71,22 +82,12 @@ function App() {
           {/* <Col md={12}> */}
             <div className="wrapper">
               <Switch>
-                <Route exact path='/' component={CreateStudent} />
-                <Route path="/create-student" component={CreateStudent} />
-                <Route path="/edit-student/:id" component={EditStudent} />
-                <Route path="/student-list" component={StudentList} />
-                <Route path="/company-list" component={CompanyList} />
-                <Route path="/contact-list" component={ContactList} />
+                <Route exact path='/' component={CreateUser} />
+                <Route path="/create-user" component={CreateUser} />
+                <Route path="/edit-user/:id" component={EditUser} />
+                <Route path="/user-list" component={UserList} />
               </Switch>
             </div>
-            {/* </div>
-
-            </div>
-            </div> */}
-
-          {/* </Col> */}
-        {/* </Row> */}
-      {/* </Container> */}
     </div>
   </Router>);
 }
