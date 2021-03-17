@@ -5,15 +5,21 @@ App is use for fetch data and show in table.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Features:
-a system and add a feature to reset user passwords.
+A system and add a feature to reset user passwords.
 Email and Password full validation.
 
 Password requirements:
+
 • Min: 1 lowercase and 1 uppercase alphabet
+
 • Min: 1 number
+
 • Min: 1 special character
+
 • 8-16 character length
+
 • Shouldn’t be the same as username
+
 • Shouldn’t be the same as last password
 ## Available Scripts
 
