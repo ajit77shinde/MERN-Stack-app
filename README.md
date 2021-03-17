@@ -2,9 +2,12 @@
 
 React MERN Stack CRUD app - Create frontend and backend with React, Node, Express, mongoDB. and learn to consume REST APIs with React Axios.
 App is use for fetch data and show in table.
+It uses React's letest features like Hooks
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Features:
+It uses React's letest features like Hooks.
+
 A system and add a feature to reset user passwords.
 
 Email and Password full validation.
