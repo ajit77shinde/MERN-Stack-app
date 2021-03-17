@@ -13,11 +13,6 @@ const useForm = (callback, validate) => {
       callback();
     }
   }, [errors]);
-  // useEffect( () =>{
-  //   console.log("values in useEffect = ", values)
-  //   setErrors(validate(values));
-
-  // }, [values])
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
@@ -28,7 +23,6 @@ const useForm = (callback, validate) => {
   const handleChange = (event) => {
     event.persist();
     setValues(values => ({ ...values, [event.target.name]: event.target.value }));
-    // setErrors(validate(values));
 
   };
 

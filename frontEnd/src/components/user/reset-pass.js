@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { url } from '../../config/config';
+// import './gift.css';
 import validate from "./validationRule";
 import useForm from "./useForm";
 import { useHistory } from "react-router-dom";
@@ -10,9 +11,10 @@ import { Link } from 'react-router-dom';
 import "./user.css";
 import { useAlert } from 'react-alert'
 
-export const CreateUser = () => {
+export const ResetPassword = () => {
     const history = useHistory();
     const alert = useAlert();
+
 
     const {
         values,
@@ -31,18 +33,17 @@ export const CreateUser = () => {
         };
         console.log("userObject = ", userObject)
 
-        axios.post(`${url}/users/create-user`, userObject)
+        axios.put(`${url}/users/update-user`, userObject)
             .then(res => {
-                console.log(res.data);
                 alert.show(res.data.msg)
+                console.log(res.data);
                 history.push("/user-list");
             });
-
     }
-
-    console.log("errors = ", errors);
+    console.log("errors = ", errors)
     return (
         <div className="form-wrapper">
+            {/* <Form onSubmit={this.onSubmit}> */}
             <Form >
                 <Form.Group controlId="Email">
                     <Form.Label>Email</Form.Label>
@@ -53,21 +54,21 @@ export const CreateUser = () => {
                     )}
                 </Form.Group>
                 <Form.Group controlId="Email">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>New Password</Form.Label>
                     <Form.Control autoComplete="off" name="password" type="password" value={values.password || ''} onChange={handleChange}
-                        placeholder="Please Enter Password" />
+                        placeholder="Please Enter New Password" />
                     {errors.password && (
                         <p className="help is-danger">{errors.password}</p>
                     )}
                 </Form.Group>
                 <Button onClick={(e) => handleSubmit(e)} variant="danger" size="lg" block="block" type="submit">
-                    Create User
+                    Reset Password
         </Button>
-                <div className="center-link">
+                {/* <div className="center-link">
                     <Link className=""
-                        to={"/reset-pass"}
+                        to={"/edit-user"}
                     > Forgot password? </Link>
-                </div>
+                </div> */}
             </Form>
 
         </div>

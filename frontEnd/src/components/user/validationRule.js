@@ -5,12 +5,6 @@ export default function validate(values) {
 
     let errors = {};
     console.log("values = ", values)
-    // const regex = new RegExp("^[7-9][0-9]{9}$")
-    // if (!values.mobileNo) {
-    //     errors.mobileNo = 'Mobile No is required';
-    //   } else if (!regex.test(values.mobileNo)) {
-    //     errors.mobileNo = 'Mobile No is invalid';
-    //   }
 
     if (!values.email) {
         errors.email = 'Email address is required';
