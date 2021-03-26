@@ -23,7 +23,6 @@ export const ResetPassword = () => {
         handleSubmit,
     } = useForm(login, validate);
 
-
     function login() {
         console.log('No errors, submit callback called!');
         localStorage.setItem("mobileNo", values.mobileNo);
