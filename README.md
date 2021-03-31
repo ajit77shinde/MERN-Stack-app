@@ -5,26 +5,7 @@ App is use for fetch data and show in table.
 It uses React's letest features like Hooks
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-# Features:
-It uses React's letest features like Hooks.
 
-A system and add a feature to reset user passwords.
-
-Email and Password full validation.
-
-Password requirements:
-
-• Min: 1 lowercase and 1 uppercase alphabet
-
-• Min: 1 number
-
-• Min: 1 special character
-
-• 8-16 character length
-
-• Shouldn’t be the same as username
-
-• Shouldn’t be the same as last password
 ## Available Scripts
 
 In the project directory, you can run:
@@ -61,4 +42,12 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Images
 
+![](images/Screenshot1.png)
+
+![](images/Screenshot2.png)
+
+![](images/Screenshot3.png)
+
+![](images/Screenshot4.png)
