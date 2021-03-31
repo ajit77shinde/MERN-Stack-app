@@ -1,0 +1,14 @@
+.center-link{
+    display: 'block';
+    text-align: center;
+}
+.is-danger{
+    color: red;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+    border: none;
+    border-bottom: 1px solid #e6e0e0;
+
+}

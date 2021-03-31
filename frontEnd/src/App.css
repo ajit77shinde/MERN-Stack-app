@@ -18,11 +18,11 @@ body h3 {
 
 .wrapper {
   margin: 0 auto;
-  width: 50%;
+  width: 65%;
 }
 
 .table-wrapper {
-  max-width: 700px;
+  max-width: 1000px;
 }
 
 .edit-link {

@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
-import UserTableRow from './UserTableRow';
+import MomentTableRow from './MomentTableRow';
 import { url } from '../../config/config';
 
-export class UserList extends Component {
+
+export class MomentList extends Component {
+
   constructor(props) {
     super(props)
     this.state = {
-      Users: []
+      moments: []
     };
   }
 
@@ -18,10 +20,11 @@ export class UserList extends Component {
   }
 
   getUserList(){
-    axios.get(`${url}/Users/`)
+    axios.get(`${url}/moment/find`)
       .then(res => {
+        console.log("moment data = ", res.data.data);
         this.setState({
-          Users: res.data
+          moments: res.data.data
         });
       })
       .catch((error) => {
@@ -29,21 +32,23 @@ export class UserList extends Component {
       })
   }
   DataTable() {
-    return this.state.Users.map((res, i) => {
-      return <UserTableRow obj={res} key={i} getUserList={() => this.getUserList()}/>;
+    return this.state.moments.map((moment, i) => {
+      return <MomentTableRow obj={moment} serNo={++i} key={i} getUserList={() => this.getUserList()}/>;
     });
   }
 
 
   render() {
-    return (<div className="table-wrapper">
-      <h2>Users</h2>
+    return (
+    <div className="table-wrapper">
+      <h2>Moments</h2>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Email</th>
-            <th>Created Date</th>
-            <th>Updated date</th>
+            <th>Sr.No</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Tags</th>
             <th>Action</th>
           </tr>
         </thead>

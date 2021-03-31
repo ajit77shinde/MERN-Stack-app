@@ -3,7 +3,7 @@ let mongoose = require('mongoose'),
   router = express.Router();
 
 // user Model
-let userSchema = require('../models/user');
+const userSchema = require('../models/user');
 
 // CREATE user
 router.route('/create-user').post((req, res, next) => {
@@ -66,6 +66,7 @@ router.route('/edit-user/:id').get((req, res) => {
 
 // Delete user
 router.route('/delete-user/:id').delete((req, res, next) => {
+  console.log("req.params.id = ", req.params.id)
   userSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
